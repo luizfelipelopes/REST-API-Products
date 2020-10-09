@@ -38,9 +38,9 @@ jobs:
       
       - name: docker push
         run: |
-          docker tag php:7.4-apache $DOCKER_USER/rest-api-products:php
-          docker push $DOCKER_USER/rest-api-products:php
-          docker tag mysql $DOCKER_USER/rest-api-products:mysql
-          docker push $DOCKER_USER/rest-api-products:mysql  
+          docker tag php:7.4-apache $DOCKER_USER/rest-api-products/php
+          docker push $DOCKER_USER/rest-api-products/php
+          docker tag mysql $DOCKER_USER/rest-api-products/mysql
+          docker push $DOCKER_USER/rest-api-products/mysql  
 
       
