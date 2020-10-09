@@ -24,6 +24,10 @@ jobs:
       - name: docker build php
         run: |
         docker build ./site -t php:7.4-apache
-      - name: docker build mysql
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
         run: |
-        docker build ./db_data -t mysql
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          echo estou testando o github actions!
