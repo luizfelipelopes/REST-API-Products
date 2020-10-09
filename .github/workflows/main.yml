@@ -24,7 +24,6 @@ jobs:
       - name: docker build php
         run: |
         docker build ./site -t php:7.4-apache
-
       - name: docker build mysql
         run: |
         docker build ./db_data -t mysql
