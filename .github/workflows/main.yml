@@ -38,6 +38,6 @@ jobs:
       
       - name: docker push
         run: |
-          docker push $DOCKER_USER/mysql:latest 
+        docker push $DOCKER_USER/rest-api-products/mysql:latest  
 
       
