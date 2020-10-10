@@ -38,6 +38,6 @@ jobs:
       
       - name: docker push
         run: |
-          docker push mysql:mysql 
+          docker push mysql:latest 
 
       
