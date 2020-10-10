@@ -38,4 +38,5 @@ jobs:
           docker build -t mysql .
       - name: docker push
         run: |
-          docker push $DOCKER_USER/rest-api-products/mysql:latest
+          docker tag mysql $DOCKER_USER/rest-api-products:mysql
+          docker push $DOCKER_USER/rest-api-products:mysql
