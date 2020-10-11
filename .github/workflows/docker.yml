@@ -41,11 +41,13 @@ jobs:
       
       - name: Deploy to Heroku
         env:
+          HEROKU_REGISTRY_URL: registry.heroku.com
           HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
           HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}  
         if: github.ref == 'refs/heads/master' && job.status == 'success'
         run: |
           git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git
+          docker login --username=_ --password $HEROKU_API_TOKEN $HEROKU_REGISTRY_URL
           export HEROKU_API_KEY=$HEROKU_API_TOKEN
           heroku container:push web --app $HEROKU_APP_NAME
           heroku container:release web --app $HEROKU_APP_NAME
