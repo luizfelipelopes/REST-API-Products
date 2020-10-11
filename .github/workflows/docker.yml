@@ -19,7 +19,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - run: |
+          git fetch --prune --unshallow
+          
       # Runs a single command using the runners shell
       - name: docker login
         env:
