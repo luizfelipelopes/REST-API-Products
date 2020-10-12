@@ -6,8 +6,6 @@ services:
         - ./site/:/var/www/html
     ports:
         - 80:80
-    environment: 
-        DB_UPSTREAM: ${DOCKER_GATEWAY_HOST:-host.docker.internal}    
   db:
         image: mysql
         command: --default-authentication-plugin=mysql_native_password
