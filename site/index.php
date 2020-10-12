@@ -1,6 +1,6 @@
 <?php
-// var_dump($_SERVER['REMOTE_ADDR']);
-// die;
+var_dump($_SERVER['REMOTE_ADDR']);
+die;
 // Get the requires necessaries
 require 'config/config.php';
 require 'model/Database.php';
