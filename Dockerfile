@@ -5,6 +5,7 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 COPY site/run-apache2.sh /usr/local/bin
 RUN ["chmod", "+x", "/usr/local/bin/run-apache2.sh"]
 CMD [ "run-apache2.sh" ]
-RUN echo "request_terminate_timeout = 300;" >> /usr/local/etc/php/php.ini
+RUN echo "request_slowlog_timeout = 1s;" >> /usr/local/etc/php/php.ini
+RUN echo "request_terminate_timeout = 15s;" >> /usr/local/etc/php/php.ini
 RUN echo "max_execution_time = 600;" >> /usr/local/etc/php/php.ini
 RUN docker-php-ext-install pdo pdo_mysql
