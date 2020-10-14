@@ -52,5 +52,5 @@ jobs:
           heroku container:push web --app $HEROKU_APP_NAME
           heroku labs:enable --app=$HEROKU_APP_NAME runtime-new-layer-extract
           heroku container:release web --app $HEROKU_APP_NAME
-          heroku ps:scale web=1 --app $HEROKU_APP_NAME
+          heroku ps:scale web=1 worker=1 --app $HEROKU_APP_NAME
       
