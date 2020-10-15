@@ -39,18 +39,25 @@ jobs:
         run: |
           docker build -t mysql .
       
-      - name: Deploy to Heroku
-        env:
-          HEROKU_REGISTRY_URL: registry.heroku.com
-          HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}  
-        if: github.ref == 'refs/heads/master' && job.status == 'success'
-        run: |
-          git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git
-          docker login --username=_ --password $HEROKU_API_TOKEN $HEROKU_REGISTRY_URL
-          export HEROKU_API_KEY=$HEROKU_API_TOKEN
-          heroku container:push web --app $HEROKU_APP_NAME
-          heroku labs:enable --app=$HEROKU_APP_NAME runtime-new-layer-extract
-          heroku container:release web --app $HEROKU_APP_NAME
-          heroku ps:scale --app $HEROKU_APP_NAME
+        - name: Build Docker image
+          run: |
+            docker build . --tag us.gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
+            
+        - name: Authenticate into Google Cloud Platform
+          uses: GoogleCloudPlatform/nimble-alpha-292623/setup-gcloud@master
+          with:
+            service_account_email: ${{ secrets. GCLOUD_EMAIL }}
+            service_account_key: ${{ secrets.GCLOUD_AUTH }}
+  
+        - name: Configure Docker to use Google Cloud Platform
+          run: "gcloud auth configure-docker --quiet"
+  
+        - name: Push image to Google Cloud Container Registry
+          run: docker push us.gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
+  
+        - name: Install beta commands and deploy on cloud run
+          run: |
+            gcloud components install beta --quiet
+            gcloud beta run deploy ${{ secrets.GCLOUD_APP_NAME }} --quiet --image us.gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }} --project ${{ secrets.GCLOUD_PROJECT }} --region europe-west1 --platform managed
+  
       
