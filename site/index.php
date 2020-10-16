@@ -1,7 +1,7 @@
 <?php
-// var_dump($_SERVER['REMOTE_ADDR']);
+var_dump($_SERVER);
 // var_dump(phpinfo());
-// die;
+die;
 
 // Get the requires necessaries
 require 'config/config.php';
