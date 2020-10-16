@@ -1,7 +1,7 @@
 <?php
 /** Configuration File */
 
-define('HOST', 'localhost');
+define('HOST', '216.239.36.53');
 define('DB', 'api_db');
 define('USER', 'root');
 define('PASS', '12345');
