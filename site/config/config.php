@@ -1,7 +1,7 @@
 <?php
 /** Configuration File */
 
-define('HOST', $_SERVER['REMOTE_ADDR']);
+define('HOST', '169.254.8.129');
 define('DB', 'api_db');
 define('USER', 'root');
 define('PASS', '12345');
