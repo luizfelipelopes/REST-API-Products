@@ -5,7 +5,7 @@ services:
     volumes: 
         - ./site/:/var/www/html
     ports:
-        - 80:8080
+        - 80:80
     extra_hosts: 
         - "teste_host:172.17.0.1"        
   db:
