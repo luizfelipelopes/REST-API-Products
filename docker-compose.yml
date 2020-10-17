@@ -19,3 +19,9 @@ services:
             MYSQL_DATABASE: api_db
         ports:
             - 3306:3306
+  cloud-sql-proxy:             
+        image: gcr.io/cloudsql-docker/gce-proxy:1.16
+        command: /cloud_sql_proxy -instances=nimble-alpha-292623:us-central1:apidb=tcp:0.0.0.0:3306
+        ports:
+            - 3306:3306
+
