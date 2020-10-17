@@ -73,6 +73,9 @@ jobs:
       
       - name: Push image to Google Cloud Container Registry
         run: docker push us.gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
+        
+      - name: Invocate Cloud Sql Proxy
+        run: /cloud_sql_proxy -instances=nimble-alpha-292623:us-central1:apidb=tcp:0.0.0.0:3306  
       
       - name: Install beta commands and deploy on cloud run
         run: |
