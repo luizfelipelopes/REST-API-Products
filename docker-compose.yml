@@ -16,6 +16,6 @@ services:
             - ./db_data:/docker-entrypoint-initdb.d
         environment: 
             MYSQL_ROOT_PASSWORD: 12345
-            MYSQL_DATABASE: api_db
+            MYSQL_DATABASE: heroku_003ddaa30ed5144
         ports:
             - 3306:3306
