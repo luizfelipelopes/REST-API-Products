@@ -168,8 +168,7 @@ class Product
     public function validateData(stdClass $data)
     {
         if (
-            empty($data->id)
-            || empty($data->name)
+            empty($data->name)
             || empty($data->description)
             || empty($data->price)
             || empty($data->category_id)

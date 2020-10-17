@@ -150,7 +150,7 @@ class Api
      */
     public function actionUpdate(stdClass $data)
     {
-        if (!$this->product->validateData($data)) {
+        if (!$this->product->validateData($data) || empty($data->id)) {
             $this->callBack(400, 'Data icomplete.');
             die;
         }
