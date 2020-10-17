@@ -11,7 +11,7 @@
 
 
 
-define('HOST', 'localhost');
+define('HOST', '127.0.0.1');
 define('DB', 'api_db');
 define('USER', 'apidb');
 define('PASS', '12345');
