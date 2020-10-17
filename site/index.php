@@ -1,9 +1,7 @@
 <?php
 // var_dump($_SERVER['REMOTE_ADDR']);
 // var_dump(phpinfo());
-$urlDb = parse_url(getenv("CLEARDB_DATABASE_URL"));
-var_dump($urlDb);
-die;
+// die;
 
 // Get the requires necessaries
 require 'config/config.php';
