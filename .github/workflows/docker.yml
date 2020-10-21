@@ -57,29 +57,3 @@ jobs:
           heroku labs:enable --app=$HEROKU_APP_NAME runtime-new-layer-extract
           heroku container:release web --app $HEROKU_APP_NAME
           heroku ps:scale web=1 --app $HEROKU_APP_NAME
-      
-      - name: Build Docker image
-        run: |
-          docker build . --tag us.gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
-          
-      - name: Authenticate into Google Cloud Platform
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-        with:
-          service_account_email: ${{ secrets. GCLOUD_EMAIL }}
-          service_account_key: ${{ secrets.GCLOUD_AUTH }}
-      
-      - name: Configure Docker to use Google Cloud Platform
-        run: "gcloud auth configure-docker --quiet"
-      
-      - name: Push image to Google Cloud Container Registry
-        run: docker push us.gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
-        
-      - name: Invocate Cloud Sql Proxy
-        run: cloud_sql_proxy -instances=nimble-alpha-292623:us-central1:apidb=tcp:0.0.0.0:3306  
-      
-      - name: Install beta commands and deploy on cloud run
-        run: |
-          gcloud components install beta --quiet
-          gcloud beta run deploy ${{ secrets.GCLOUD_APP_NAME }} --quiet --image us.gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }} --project ${{ secrets.GCLOUD_PROJECT }} --region europe-west1 --platform managed
-  
-      
