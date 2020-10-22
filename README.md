@@ -1,7 +1,7 @@
 # REST-API-Products
 REST API PHP for manage products and categories.
 
-Application Link: https://aqueous-bastion-27565.herokuapp.com/
+Application Link: https://aqueous-bastion-27565.herokuapp.com/api
 
 <h2>Routes:<h2>
 <pre>
@@ -21,65 +21,65 @@ category/delete/{id}
 <h2>Read All Products:</h2>
 <pre>
     // Example
-    https://aqueous-bastion-27565.herokuapp.com/product/read
+    // https://aqueous-bastion-27565.herokuapp.com/product/read
 
     // Output json
-[
-    {
-        "id": "1",
-        "name": "Amazing Pillow 3.0",
-        "description": "The best pillow for amazing programmers.",
-        "price": "255",
-        "category_id": "2",
-        "created": "2018-08-01 00:35:07",
-        "modified": "2014-05-31 17:12:26"
-    },
-    {
-        "id": "2",
-        "name": "Teste Pillow 3.0",
-        "description": "The best pillow for greatest programmers.",
-        "price": "255",
-        "category_id": "2",
-        "created": "2018-08-01 00:35:07",
-        "modified": "2014-05-31 17:12:26"
-    },
-    {
-        "id": "3",
-        "name": "Amazing Pillow 3.0",
-        "description": "The best pillow for amazing programmers.",
-        "price": "255",
-        "category_id": "2",
-        "created": "2018-08-01 00:35:07",
-        "modified": "2014-05-31 17:12:26"
-    },
-    {
-        "id": "6",
-        "name": "Amazing Pillow 3.0",
-        "description": "The best pillow for amazing programmers.",
-        "price": "255",
-        "category_id": "2",
-        "created": "2018-08-01 00:35:07",
-        "modified": "2014-05-31 02:12:21"
-    },
-    {
-        "id": "7",
-        "name": "Amazing Pillow 3.0",
-        "description": "The best pillow for amazing programmers.",
-        "price": "255",
-        "category_id": "2",
-        "created": "2018-08-01 00:35:07",
-        "modified": "2014-05-31 02:13:39"
-    }  
-]
+    [
+        {
+            "id": "1",
+            "name": "Amazing Pillow 3.0",
+            "description": "The best pillow for amazing programmers.",
+            "price": "255",
+            "category_id": "2",
+            "created": "2018-08-01 00:35:07",
+            "modified": "2014-05-31 17:12:26"
+        },
+        {
+            "id": "2",
+            "name": "Teste Pillow 3.0",
+            "description": "The best pillow for greatest programmers.",
+            "price": "255",
+            "category_id": "2",
+            "created": "2018-08-01 00:35:07",
+            "modified": "2014-05-31 17:12:26"
+        },
+        {
+            "id": "3",
+            "name": "Amazing Pillow 3.0",
+            "description": "The best pillow for amazing programmers.",
+            "price": "255",
+            "category_id": "2",
+            "created": "2018-08-01 00:35:07",
+            "modified": "2014-05-31 17:12:26"
+        },
+        {
+            "id": "6",
+            "name": "Amazing Pillow 3.0",
+            "description": "The best pillow for amazing programmers.",
+            "price": "255",
+            "category_id": "2",
+            "created": "2018-08-01 00:35:07",
+            "modified": "2014-05-31 02:12:21"
+        },
+        {
+            "id": "7",
+            "name": "Amazing Pillow 3.0",
+            "description": "The best pillow for amazing programmers.",
+            "price": "255",
+            "category_id": "2",
+            "created": "2018-08-01 00:35:07",
+            "modified": "2014-05-31 02:13:39"
+        }  
+    ]
 
 </pre>
 
 <h2>Read One Product</h2>
 <pre>
     // Example
-    https://aqueous-bastion-27565.herokuapp.com/product/read/1
+    // https://aqueous-bastion-27565.herokuapp.com/product/read/1
 
-    //Output
+    // Output json
     {
         "id": "1",
         "name": "Amazing Pillow 3.0",
@@ -95,9 +95,9 @@ category/delete/{id}
 <h2>Create a Product</h2>
 <pre>
     // Example
-    https://aqueous-bastion-27565.herokuapp.com/product/create
+    // https://aqueous-bastion-27565.herokuapp.com/product/create
 
-    //Input json
+    // Input json
     {
         "name": "Amazing Pillow 3.0",
         "description": "The best pillow for amazing programmers.",
@@ -107,7 +107,7 @@ category/delete/{id}
         "modified": "2014-05-31 17:12:26"
     }
 
-    //Output
+    // Output
     Product was created.
 </pre>   
 
@@ -117,7 +117,7 @@ category/delete/{id}
     // Example
     https://aqueous-bastion-27565.herokuapp.com/product/update
 
-    //Input json
+    // Input json
     {
         "id": "1",
         "name": "Amazing Pillow 3.0 (Updated)",
@@ -128,7 +128,7 @@ category/delete/{id}
         "modified": "2014-05-31 17:12:26"
     }
 
-    //Output
+    // Output
     Product was update.
 </pre>   
 
@@ -137,7 +137,7 @@ category/delete/{id}
     // Example
     https://aqueous-bastion-27565.herokuapp.com/product/delete/50
 
-    //Output
+    // Output
     Product was deleted.
 </pre>   
 
