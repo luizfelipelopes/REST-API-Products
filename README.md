@@ -115,7 +115,7 @@ category/delete/{id}
 <h2>Update a Product</h2>
 <pre>
     // Example
-    https://aqueous-bastion-27565.herokuapp.com/product/update
+    // https://aqueous-bastion-27565.herokuapp.com/product/update
 
     // Input json
     {
@@ -135,7 +135,7 @@ category/delete/{id}
 <h2>Delete a Product</h2>
 <pre>
     // Example
-    https://aqueous-bastion-27565.herokuapp.com/product/delete/50
+    // https://aqueous-bastion-27565.herokuapp.com/product/delete/50
 
     // Output
     Product was deleted.
