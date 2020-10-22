@@ -173,7 +173,7 @@ class Api
             die;
         }
 
-        $this->callBack(201, 'Product was udate.');
+        $this->callBack(201, 'Product was update.');
     }
 
 
