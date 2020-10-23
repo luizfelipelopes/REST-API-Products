@@ -1,7 +1,7 @@
 # REST-API-Products
 REST API PHP for manage products and categories.
 
-Application Link: https://aqueous-bastion-27565.herokuapp.com/api
+Application Link: https://aqueous-bastion-27565.herokuapp.com/api/
 
 <h2>Routes:<h2>
 <pre>
@@ -9,16 +9,14 @@ product/read
 product/read/{id}
 product/update/{id}
 product/delete/{id}
-
 category/read
-category/read/{id}
-category/update/{id}
-category/delete/{id}
 </pre>
 
 
+<h2>Products</h2>
 
-<h2>Read All Products:</h2>
+
+<h3>Read All Products:</h3>
 <pre>
     // Example
     // https://aqueous-bastion-27565.herokuapp.com/product/read
@@ -74,7 +72,7 @@ category/delete/{id}
 
 </pre>
 
-<h2>Read One Product</h2>
+<h3>Read One Product</h3>
 <pre>
     // Example
     // https://aqueous-bastion-27565.herokuapp.com/product/read/1
@@ -92,7 +90,7 @@ category/delete/{id}
 </pre>   
 
 
-<h2>Create a Product</h2>
+<h3>Create a Product</h3>
 <pre>
     // Example
     // https://aqueous-bastion-27565.herokuapp.com/product/create
@@ -112,7 +110,7 @@ category/delete/{id}
 </pre>   
 
 
-<h2>Update a Product</h2>
+<h3>Update a Product</h3>
 <pre>
     // Example
     // https://aqueous-bastion-27565.herokuapp.com/product/update
@@ -132,7 +130,7 @@ category/delete/{id}
     Product was update.
 </pre>   
 
-<h2>Delete a Product</h2>
+<h3>Delete a Product</h3>
 <pre>
     // Example
     // https://aqueous-bastion-27565.herokuapp.com/product/delete/50
@@ -140,4 +138,53 @@ category/delete/{id}
     // Output
     Product was deleted.
 </pre>   
+
+
+<h2>Categories</h2>
+<h3>Read All Categories:</h3>
+<pre>
+    // Example
+    // https://aqueous-bastion-27565.herokuapp.com/category/read
+
+    // Output json
+    [
+        {
+            "id": "1",
+            "name": "Fashion",
+            "description": "Category for anything related to fashion.",
+            "created": "2014-06-01 00:35:07"
+        },
+        {
+            "id": "2",
+            "name": "Electronics",
+            "description": "Gadgets, drones and more.",
+            "created": "2014-06-01 00:35:07"
+        },
+        {
+            "id": "3",
+            "name": "Motors",
+            "description": "Motor sports and more",
+            "created": "2014-06-01 00:35:07"
+        },
+        {
+            "id": "5",
+            "name": "Movies",
+            "description": "Movie products.",
+            "created": "0000-00-00 00:00:00"
+        },
+        {
+            "id": "6",
+            "name": "Books",
+            "description": "Kindle books, audio books and more.",
+            "created": "0000-00-00 00:00:00"
+        },
+        {
+            "id": "13",
+            "name": "Sports",
+            "description": "Drop into new winter gear.",
+            "created": "2016-01-09 02:24:24"
+        }
+    ]
+</pre>
+
 
